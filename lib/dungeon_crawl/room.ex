@@ -6,6 +6,9 @@ defmodule DungeonCrawl.Room do
 
   defstruct description: nil, actions: [], trigger: nil
 
+  @search [Triggers.Trap, Triggers.Treasure]
+  @rest [Triggers.EnemyHidden, Triggers.Rest]
+
   def all, do: [
     %Room{
       description: "You can see the light of day. You found the exit!",
@@ -20,12 +23,12 @@ defmodule DungeonCrawl.Room do
     %Room{
       description: "You found a room with a lot of stuff.",
       actions: [forward(), search()],
-      trigger: Enum.random([Triggers.Trap, Triggers.Treasure])
+      trigger: Enum.random(@search)
     },
     %Room{
       description: "You found a room with a bed. Looks like a nice place to take a nap.",
       actions: [forward(), rest()],
-      trigger: Enum.random([Triggers.EnemyHidden, Triggers.Rest])
+      trigger: Enum.random(@rest)
     },
   ]
 end
