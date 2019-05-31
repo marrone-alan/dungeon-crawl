@@ -13,8 +13,6 @@ hard, the exit and healing rooms will be difficult to find.
  * Implement a feature that changes the probability of the exit room
 appearing based on how many places the hero has visited. For example,
 at the beginning of the game the exit room will have no probability of
-Chapter 6. Designing Your Elixir Applications • 136
-report erratum • discuss
 appearing, but after some certain number of rounds, the chances of it
 appearing increase.
 
